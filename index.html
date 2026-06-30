@@ -1,1296 +1,582 @@
-w<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arkansas Nemesis Gold | Elite Fastpitch Softball</title>
+<title>XPT | Xtreme Performance Training — Jonesboro, AR</title>
+<meta name="description" content="XPT is Northeast Arkansas's premier youth athletic performance training facility and competitive travel softball organization in Jonesboro, AR. Speed, strength, hitting, and pitching development for athletes who want more.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#0F1D33',
+          navy2: '#13294B',
+          orange: '#F35A1F',
+          steel: '#7E8AA0',
+          charcoal: '#1B2433',
+          fog: '#F4F5F7'
+        }
+      }
+    }
+  }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "XPT - Xtreme Performance Training",
+  "alternateName": "XPT",
+  "description": "Youth athletic performance training facility and competitive travel softball organization in Jonesboro, Arkansas, offering speed & agility, strength training, hitting, and pitching development.",
+  "url": "https://www.xptathletics.com",
+  "telephone": "+1-870-000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Performance Way",
+    "addressLocality": "Jonesboro",
+    "addressRegion": "AR",
+    "postalCode": "72401",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Jonesboro AR", "Northeast Arkansas", "Craighead County"],
+  "sport": ["Softball", "Baseball", "Speed and Agility Training", "Strength Training"],
+  "priceRange": "$$"
+}
+</script>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --royal: #121C7A;
-    --royal-dark: #0C1560;
-    --royal-mid: #1a2894;
-    --white: #FFFFFF;
-    --off-white: #F5F5F5;
-    --gold: #C9A84C;
-    --gold-light: #E4C068;
-    --gold-dark: #A8843A;
-    --silver: #C7C7C7;
-    --mid-gray: #888;
-    --text-dark: #111;
+  :root{
+    --navy:#0F1D33;
+    --navy-2:#13294B;
+    --orange:#F35A1F;
+    --steel:#7E8AA0;
+    --charcoal:#1B2433;
+    --fog:#F4F5F7;
   }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif; background:var(--navy); color:#fff;}
+  .display{font-family:'Anton',sans-serif; letter-spacing:0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .text-orange{color:var(--orange);}
+  .bg-orange{background-color:var(--orange);}
+  .bg-navy{background-color:var(--navy);}
+  .bg-navy2{background-color:var(--navy-2);}
+  .bg-charcoal{background-color:var(--charcoal);}
+  .bg-fog{background-color:var(--fog);}
 
-  html { scroll-behavior: smooth; }
+  /* Signature diagonal "X-cut" device — echoes the crossed bats / X mark */
+  .slash-bottom{clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);}
+  .slash-top{clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%);}
+  .slash-both{clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);}
 
-  body {
-    font-family: 'Barlow', sans-serif;
-    background: var(--white);
-    color: var(--text-dark);
-    overflow-x: hidden;
-  }
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(18, 28, 122, 0.97);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding: 0 2rem;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  .nav-link{position:relative;}
+  .nav-link::after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--orange);transition:width .25s ease;}
+  .nav-link:hover::after{width:100%;}
 
-  .nav-brand {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--white);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
+  .card-img{aspect-ratio:4/5; background:linear-gradient(135deg, #1B2433 0%, #0F1D33 60%, #2A3650 100%);}
 
-  .nav-brand span { color: var(--gold); font-weight: 400; }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--white); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--royal);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding-top: 60px;
-  }
-
-  /* Softball stitching background */
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+  .placeholder-tex{
     background-image:
-      radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+      repeating-linear-gradient(135deg, rgba(243,90,31,0.07) 0px, rgba(243,90,31,0.07) 2px, transparent 2px, transparent 26px);
   }
 
-  .hero-stitching {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    opacity: 0.06;
-  }
-
-  .hero-stitching svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 2rem;
-    animation: fadeUp 0.9s ease both;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(32px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-logo {
-    width: 340px;
-    height: auto;
-    margin: 0 auto 2.5rem;
-    display: block;
-    filter: drop-shadow(0 4px 24px rgba(0,0,0,0.4));
-  }
-
-  /* SVG logo placeholder — replace src with actual logo */
-  .logo-circle {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 3px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 2.5rem;
-    position: relative;
-  }
-
-  .logo-circle::after {
-    content: 'N';
-    font-family: 'Oswald', sans-serif;
-    font-size: 4.5rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: -0.02em;
-  }
-
-  .hero-eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    animation: fadeUp 0.85s ease both;
-    animation-delay: 0.05s;
-  }
-
-  .hero-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(2.8rem, 8vw, 5.5rem);
-    font-weight: 700;
-    color: var(--white);
-    line-height: 0.95;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-    animation: fadeUp 0.9s ease both;
-    animation-delay: 0.1s;
-  }
-
-  .hero-title .gold-line {
-    display: block;
-    color: var(--gold);
-    font-size: 0.45em;
-    letter-spacing: 0.08em;
-    font-weight: 400;
-    margin-top: 0.5rem;
-  }
-
-  .hero-sub {
-    font-family: 'Barlow', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    font-style: italic;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.08em;
-    margin-bottom: 3rem;
-    animation: fadeUp 0.9s ease both;
-    animation-delay: 0.15s;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeUp 0.9s ease both;
-    animation-delay: 0.22s;
-  }
-
-  .btn {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 0.85rem 2.2rem;
-    border-radius: 2px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s;
-    display: inline-block;
-  }
-
-  .btn-white {
-    background: var(--white);
-    color: var(--royal);
-    border: 2px solid var(--white);
-  }
-
-  .btn-white:hover {
-    background: transparent;
-    color: var(--white);
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    border: 2px solid rgba(255,255,255,0.4);
-  }
-
-  .btn-outline:hover {
-    border-color: var(--white);
-    background: rgba(255,255,255,0.08);
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255,255,255,0.3);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    animation: fadeUp 1s ease both 0.5s;
-  }
-
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
-    animation: scrollDrop 1.8s ease-in-out infinite;
-  }
-
-  @keyframes scrollDrop {
-    0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
-    50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
-    100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
-  }
-
-  /* ── SECTION COMMONS ── */
-  section { padding: 6rem 1.5rem; }
-
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--royal);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 1;
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  /* ── ABOUT ── */
-  .about {
-    background: var(--white);
-  }
-
-  .about-inner {
-    max-width: 680px;
-  }
-
-  .about-text p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: #444;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5px;
-    background: var(--gold);
-    border: 1.5px solid var(--gold);
-  }
-
-  .stat-box {
-    background: var(--white);
-    padding: 2rem 1.5rem;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--royal);
-    line-height: 1;
-    display: block;
-  }
-
-  .stat-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--mid-gray);
-    margin-top: 0.4rem;
-    display: block;
-  }
-
-  /* ── ROSTER ── */
-  .roster-section {
-    background: var(--royal);
-  }
-
-  .roster-section .section-label { color: var(--gold); }
-  .roster-section .section-title { color: var(--white); }
-
-  .roster-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2.5rem;
-  }
-
-  .roster-table th {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    font-weight: 600;
-  }
-
-  .roster-table td {
-    padding: 1rem;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    vertical-align: middle;
-  }
+  .stat-num{font-family:'Anton',sans-serif; font-size:clamp(2.6rem,6vw,4.5rem); line-height:1;}
 
-  .roster-table tr:hover td {
-    background: rgba(255,255,255,0.04);
+  /* Cinematic hero motion */
+  .hero-bg img{animation: kenburns 24s ease-in-out infinite alternate;}
+  @keyframes kenburns{
+    0%  { transform: scale(1)    translate(0,    0);    }
+    100%{ transform: scale(1.1)  translate(-1.5%,-1%); }
   }
 
-  .player-num {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    color: var(--white);
-    font-size: 1.1rem;
+  /* Logo fades in with a gentle upward drift */
+  .logo-fade{
+    opacity:0;
+    animation: logoIn 1.4s cubic-bezier(.16,1,.3,1) 0.2s forwards;
   }
-
-  .player-name {
-    font-weight: 600;
-    color: var(--white);
-  }
-
-  .pos-badge {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: rgba(201,168,76,0.15);
-    color: var(--gold);
-    padding: 0.25rem 0.6rem;
-    border-radius: 2px;
-  }
-
-  .grad-year {
-    font-family: 'Barlow Condensed', sans-serif;
-    color: var(--gold-light);
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-  }
-
-  /* ── SCHEDULE ── */
-  .schedule-section {
-    background: var(--off-white);
-  }
-
-  .schedule-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1px;
-    background: var(--gold);
-    border: 1px solid var(--gold);
-    margin-top: 2.5rem;
-  }
-
-  .schedule-card {
-    background: var(--white);
-    padding: 1.75rem;
-    position: relative;
-    transition: background 0.2s;
-  }
-
-  .schedule-card:hover { background: #f9f9f9; }
-
-  .schedule-card .card-dates {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--royal);
-    margin-bottom: 0.3rem;
-  }
-
-  .schedule-card .card-event {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--text-dark);
-    margin-bottom: 0.25rem;
-  }
-
-  .schedule-card .card-location {
-    font-size: 0.85rem;
-    color: var(--mid-gray);
-    font-weight: 300;
-  }
-
-  .status-badge {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.6rem;
-    border-radius: 2px;
-    position: absolute;
-    top: 1.75rem;
-    right: 1.75rem;
-  }
-
-  .badge-upcoming { background: var(--gold); color: var(--royal-dark); }
-  .badge-completed { background: #e5e5e5; color: #666; }
-
-  /* ── PLAYERS SECTION ── */
-  .players-section {
-    background: var(--white);
-  }
-
-  .player-cards-wrap {
-    margin-top: 2.5rem;
-  }
-
-  .player-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .player-card {
-    width: 100%;
-    flex-shrink: 0;
-    border: 1.5px solid #e8e8e8;
-    background: var(--white);
-    transition: border-color 0.2s, transform 0.2s;
-  }
-
-  .player-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-3px);
-  }
-
-  .player-card-photo {
-    background: var(--royal);
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 3 / 4;
-  }
-
-  .player-card-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 15%;
-    display: block;
+  @keyframes logoIn{
+    0%  { opacity:0; transform:translateY(18px) scale(0.96); }
+    100%{ opacity:1; transform:translateY(0)    scale(1);    }
   }
 
-  .player-jersey-num {
-    font-family: 'Oswald', sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
-    color: rgba(201,168,76,0.65);
-    position: absolute;
-    top: 10px;
-    left: 12px;
-    line-height: 1;
-    z-index: 2;
-    pointer-events: none;
+  /* Headline lines stagger in after logo */
+  .hero-headline span{
+    display:block; opacity:0; transform:translateY(36px);
+    animation: headlineIn .9s cubic-bezier(.16,1,.3,1) forwards;
   }
+  .hero-headline span:nth-child(1){ animation-delay: .85s; }
+  .hero-headline span:nth-child(2){ animation-delay:1.05s; }
+  @keyframes headlineIn{ to{ opacity:1; transform:translateY(0); } }
 
-  .player-initial {
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: rgba(255,255,255,0.5);
-    z-index: 1;
-    position: relative;
+  /* Sub text and CTAs */
+  .hero-sub{
+    opacity:0;
+    animation: fadeUp .8s ease 1.4s forwards;
   }
-
-  .player-card-body {
-    padding: 0.85rem;
-  }
-
-  .player-card-name {
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--text-dark);
-    line-height: 1.1;
-    margin-bottom: 0.35rem;
-  }
-
-  .player-card-pos {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    margin-bottom: 0.75rem;
-  }
-
-  .player-profile-link {
-    display: block;
-    margin-top: 1rem;
-    text-align: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--royal);
-    border: 1.5px solid var(--gold);
-    padding: 0.5rem;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  .player-profile-link:hover {
-    background: var(--gold);
-    color: var(--royal-dark);
-  }
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-
-  .meta-item { font-size: 0.72rem; }
-  .meta-item .meta-label {
-    color: var(--mid-gray);
-    font-size: 0.65rem;
-    font-family: 'Barlow Condensed', sans-serif;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    display: block;
-  }
-  .meta-item .meta-val { font-weight: 600; color: var(--text-dark); }
-
-  /* ── CONTACT ── */
-  .contact-section {
-    background: var(--royal);
-    text-align: center;
-  }
-
-  .contact-section .section-label { color: var(--gold); }
-  .contact-section .section-title { color: var(--white); }
-
-  .contact-sub {
-    color: rgba(255,255,255,0.6);
-    font-size: 1rem;
-    font-weight: 300;
-    max-width: 480px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.7;
+  .hero-ctas{
+    opacity:0;
+    animation: fadeUp .8s ease 1.65s forwards;
   }
-
-  .contact-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .contact-link {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
-    text-decoration: none;
-    border: 1.5px solid rgba(255,255,255,0.2);
-    padding: 0.75rem 1.8rem;
-    border-radius: 2px;
-    transition: all 0.2s;
-  }
-
-  .contact-link:hover {
-    color: var(--white);
-    border-color: rgba(255,255,255,0.6);
-    background: rgba(255,255,255,0.06);
-  }
-
-  /* ── MERCH ── */
-  .merch-section {
-    background: var(--off-white);
-    text-align: center;
-    padding: 4rem 1.5rem;
-    border-top: 4px solid var(--gold);
-  }
-
-  .merch-section .section-label { color: var(--royal); }
-  .merch-section .section-title { color: var(--text-dark); }
-
-  .merch-sub {
-    font-size: 1rem;
-    font-weight: 300;
-    color: #555;
-    max-width: 480px;
-    margin: 0 auto 2rem;
-    line-height: 1.7;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--royal-dark);
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding: 2rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-brand {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: var(--white);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  @keyframes fadeUp{
+    from{ opacity:0; transform:translateY(16px); }
+    to  { opacity:1; transform:translateY(0);    }
   }
-
-  .footer-brand span { color: var(--gold); font-weight: 400; font-size: 0.75rem; display: block; margin-top: 0.2rem; letter-spacing: 0.15em; }
 
-  .footer-copy {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.3);
-    font-family: 'Barlow Condensed', sans-serif;
-    letter-spacing: 0.08em;
-  }
+  .scroll-line-fill{position:absolute; top:-100%; left:0; width:100%; height:100%; background:var(--orange); animation: scrollFill 1.8s ease-in-out infinite;}
+  @keyframes scrollFill{ 0%{top:-100%;} 50%{top:0%;} 100%{top:100%;} }
 
-  /* ── DIVIDER STRIPE ── */
-  .stripe {
-    height: 4px;
-    background: linear-gradient(90deg, var(--royal) 0%, var(--gold) 50%, var(--royal) 100%);
+  @media (prefers-reduced-motion: reduce){
+    .hero-bg img, .logo-fade, .hero-headline span, .hero-sub, .hero-ctas{ animation:none; opacity:1; transform:none; }
+    .scroll-line-fill{ animation:none; }
   }
 
-  /* ── MOBILE ── */
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .about-stats { grid-template-columns: 1fr 1fr; }
-    section { padding: 4rem 1.25rem; }
-    .hero-title { font-size: clamp(2.4rem, 11vw, 4rem); }
-    footer { flex-direction: column; text-align: center; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{transition:none; opacity:1; transform:none;}
   }
 
-  @media (max-width: 480px) {
-    .hero-buttons { flex-direction: column; align-items: center; }
-    .btn { width: 220px; text-align: center; }
+  /* Diagonal hairline divider used as eyebrow underline / section marker */
+  .x-mark::before{
+    content:'';
+    display:inline-block;
+    width:22px;height:2px;
+    background:var(--orange);
+    transform:rotate(35deg);
+    margin-right:10px;
+    vertical-align:middle;
   }
-
-  /* ── SCROLL REVEAL ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+  .x-mark::after{
+    content:'';
+    display:inline-block;
+    width:22px;height:2px;
+    background:var(--orange);
+    transform:rotate(-35deg) translateX(-22px);
+    margin-right:-22px;
+    vertical-align:middle;
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .coach-card:hover .coach-img{filter:grayscale(0); transform:scale(1.04);}
+  .coach-img{filter:grayscale(0.35); transition:filter .4s ease, transform .4s ease;}
 
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
+  ::selection{background:var(--orange); color:#fff;}
 </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
 <!-- NAV -->
-<nav>
-  <div class="nav-brand">Arkansas Nemesis <span>Gold</span></div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#roster">Roster</a></li>
-    <li><a href="#players">Players</a></li>
-    <li><a href="#schedule">Schedule</a></li>
-    <li><a href="https://nemesis.merch-stores.com/" target="_blank">Team Store</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 flex items-center justify-between py-3 md:py-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+      <img src="assets/xpt-logo.jpg" alt="XPT" class="w-10 h-10 md:w-12 md:h-12 object-cover rounded-sm">
+      <div class="leading-none">
+        <div class="display text-lg md:text-xl tracking-wide">XPT</div>
+        <div class="mono text-[8px] uppercase tracking-[0.2em] text-steel/80 hidden sm:block">Xtreme Performance Training</div>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-7 mono text-xs uppercase tracking-[0.15em]">
+      <a href="programs.html" class="nav-link">Training</a>
+      <a href="coaches.html" class="nav-link">Coaches</a>
+      <a href="#coaches" class="nav-link">Lessons</a>
+      <a href="#testimonials" class="nav-link">Testimonials</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#book" class="bg-orange text-white mono text-[11px] uppercase tracking-[0.12em] px-4 py-2.5 md:px-5 md:py-3 font-bold hover:bg-white hover:text-navy transition-colors">Book Now</a>
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="lg:hidden text-white p-1" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobileMenu" class="lg:hidden fixed inset-0 bg-navy z-40 flex flex-col pt-24 px-8 pb-12 translate-x-full transition-transform duration-300">
+    <button id="menuClose" class="absolute top-5 right-5 text-white" aria-label="Close menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <img src="assets/xpt-logo.jpg" alt="XPT" class="w-20 h-20 object-cover rounded-sm mb-8">
+    <nav class="flex flex-col gap-6 mono text-base uppercase tracking-[0.15em]">
+      <a href="programs.html" class="border-b border-white/10 pb-6 hover:text-orange transition-colors">Training</a>
+      <a href="coaches.html" class="border-b border-white/10 pb-6 hover:text-orange transition-colors">Coaches</a>
+      <a href="#coaches" class="border-b border-white/10 pb-6 hover:text-orange transition-colors" onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')">Lessons</a>
+      <a href="#testimonials" class="border-b border-white/10 pb-6 hover:text-orange transition-colors" onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')">Testimonials</a>
+      <a href="#contact" class="border-b border-white/10 pb-6 hover:text-orange transition-colors" onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')">Contact</a>
+    </nav>
+    <a href="#book" class="mt-auto bg-orange text-white text-center py-4 font-bold mono text-sm uppercase tracking-[0.15em]" onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')">Book Training</a>
+  </div>
+</header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-stitching">
-    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <!-- Softball stitching arcs -->
-      <g fill="none" stroke="white" stroke-width="1.5">
-        <path d="M 200,400 Q 250,250 300,400 Q 250,550 200,400"/>
-        <path d="M 220,380 Q 270,230 320,380 Q 270,530 220,380"/>
-        <path d="M 900,200 Q 950,50 1000,200 Q 950,350 900,200"/>
-        <path d="M 920,180 Q 970,30 1020,180 Q 970,330 920,180"/>
-        <path d="M 600,600 Q 650,450 700,600 Q 650,750 600,600"/>
-        <path d="M 620,580 Q 670,430 720,580 Q 670,730 620,580"/>
-        <line x1="240" y1="360" x2="260" y2="350"/>
-        <line x1="245" y1="375" x2="265" y2="370"/>
-        <line x1="245" y1="390" x2="265" y2="390"/>
-        <line x1="245" y1="405" x2="265" y2="408"/>
-        <line x1="240" y1="420" x2="260" y2="428"/>
-        <line x1="940" y1="160" x2="960" y2="150"/>
-        <line x1="945" y1="175" x2="965" y2="170"/>
-        <line x1="945" y1="190" x2="965" y2="190"/>
-        <line x1="945" y1="205" x2="965" y2="208"/>
-        <line x1="940" y1="220" x2="960" y2="228"/>
-        <line x1="640" y1="560" x2="660" y2="550"/>
-        <line x1="645" y1="575" x2="665" y2="570"/>
-        <line x1="645" y1="590" x2="665" y2="590"/>
-        <line x1="645" y1="605" x2="665" y2="608"/>
-        <line x1="640" y1="620" x2="660" y2="628"/>
-      </g>
-    </svg>
+<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-navy">
+
+  <!-- Grayscale athlete photo background — swap src for real action photo -->
+  <div class="hero-bg absolute inset-0">
+    <img
+      src="assets/xpt-logo.jpg"
+      alt=""
+      aria-hidden="true"
+      class="w-full h-full object-cover object-center"
+      style="filter:grayscale(100%) brightness(0.28) contrast(1.1);"
+    >
   </div>
 
-  <div class="hero-content">
-    <img src="images/arnemesis-gold-logo.webp" class="hero-logo" alt="Arkansas Nemesis Gold">
-    <p class="hero-eyebrow">Arkansas · Fastpitch · Organization</p>
-    <h1 class="hero-title">
-      Arkansas<br>Nemesis
-      <span class="gold-line">Gold</span>
+  <!-- Cinematic grade stack -->
+  <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-navy/10 z-10"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-navy/50 via-transparent to-transparent z-10"></div>
+  <div class="absolute inset-0 z-10" style="background:radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(15,29,51,0.65) 100%);"></div>
+  <!-- Film grain overlay -->
+  <div class="absolute inset-0 z-10 pointer-events-none"
+       style="opacity:0.035; background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');"></div>
+
+  <!-- Content: logo + headline -->
+  <div class="relative z-20 flex flex-col items-center text-center px-6 pt-20 pb-36 w-full">
+
+    <!-- Logo — fades in first, glows orange -->
+    <img
+      src="assets/xpt-logo.jpg"
+      alt="XPT — Xtreme Performance Training"
+      class="logo-fade w-40 md:w-56 lg:w-64 mb-8 md:mb-10"
+      style="filter: drop-shadow(0 0 40px rgba(243,90,31,0.6)) drop-shadow(0 4px 24px rgba(0,0,0,0.8));"
+    >
+
+    <!-- Headline fades in after logo -->
+    <h1 class="hero-headline display text-[12vw] md:text-[6.5vw] lg:text-[5.5vw] leading-[0.92] uppercase">
+      <span class="block">Built for athletes.</span>
+      <span class="block text-orange">Trained for champions.</span>
     </h1>
-    <p class="hero-sub">Elite Fastpitch Softball</p>
-    <div class="hero-buttons">
-      <a href="#schedule" class="btn btn-white">View Schedule</a>
-      <a href="#contact" class="btn btn-outline">Contact Team</a>
+
+    <p class="hero-sub mt-6 max-w-md text-steel/80 text-sm md:text-base leading-relaxed">
+      Northeast Arkansas's home for athletic performance training and competitive travel softball.
+    </p>
+
+    <div class="hero-ctas mt-10 flex flex-wrap justify-center gap-4">
+      <a href="#book" class="bg-orange text-white px-10 py-4 font-bold uppercase mono text-xs tracking-[0.15em] hover:bg-white hover:text-navy transition-colors duration-200">Start Training</a>
+      <a href="coaches.html" class="border border-white/35 text-white px-10 py-4 font-bold uppercase mono text-xs tracking-[0.15em] hover:border-orange hover:text-orange transition-colors duration-200">Meet Our Coaches</a>
     </div>
   </div>
 
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    Scroll
+  <!-- Scroll cue — centered bottom -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
+    <span class="mono text-[10px] uppercase tracking-[0.3em] text-white/40">Scroll</span>
+    <span class="block w-px h-10 bg-white/20 relative overflow-hidden"><span class="scroll-line-fill"></span></span>
   </div>
+
 </section>
 
-<div class="stripe"></div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-inner">
-      <div class="about-text reveal">
-        <p class="section-label">Who We Are</p>
-        <h2 class="section-title">Built for<br>the Next Level</h2>
-        <p>Arkansas Nemesis Gold is a competitive fastpitch softball organization focused on player development, toughness, and exposure at the next level. We compete in elite travel ball circuits across the region and beyond.</p>
-        <p>Based in Arkansas, our program is built around a culture of accountability, hard work, and genuine love for the game.</p>
-        <a href="#contact" class="btn btn-white" style="border: 2px solid var(--royal); color: var(--royal); margin-top: 0.5rem;">Connect With Us</a>
+<!-- PROGRAMS -->
+<section class="bg-navy py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-end justify-between flex-wrap gap-6 mb-14 reveal">
+      <div>
+        <p class="mono text-xs uppercase tracking-[0.3em] text-orange mb-3 x-mark"><span class="px-2">Programs</span></p>
+        <h2 class="display text-4xl md:text-5xl uppercase">Train Your Edge</h2>
       </div>
-
+      <p class="max-w-sm text-steel text-sm">Every program is built around the same standard: measurable development, every single session.</p>
     </div>
-  </div>
-</section>
 
-<!-- ROSTER -->
-<section class="roster-section" id="roster">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label">The Team</p>
-      <h2 class="section-title">2026 Roster</h2>
-    </div>
-    <table class="roster-table reveal reveal-delay-1">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Player</th>
-          <th>Position</th>
-          <th>Grad Year</th>
-          <th>Bats / Throws</th>
-        </tr>
-      </thead>
-            <tbody>
-        <tr>
-          <td class="player-num">1</td>
-          <td class="player-name">Ali Wood</td>
-          <td><span class="pos-badge">OF</span></td>
-          <td class="grad-year">2030</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">L / L</td>
-        </tr>
-        <tr>
-          <td class="player-num">5</td>
-          <td class="player-name">Mackenzie Fowler</td>
-          <td><span class="pos-badge">C / 3rd / UTIL</span></td>
-          <td class="grad-year">2030</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">7</td>
-          <td class="player-name">Melanie Ramsey</td>
-          <td><span class="pos-badge">LHP / 1st / OF</span></td>
-          <td class="grad-year">2030</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">L / L</td>
-        </tr>
-        <tr>
-          <td class="player-num">12</td>
-          <td class="player-name">Riley Barnes</td>
-          <td><span class="pos-badge">OF / SS / RHP</span></td>
-          <td class="grad-year">2029</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">15</td>
-          <td class="player-name">Addie Welch</td>
-          <td><span class="pos-badge">RHP / 1st / OF</span></td>
-          <td class="grad-year">2030</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">18</td>
-          <td class="player-name">Annabelle Wheeler</td>
-          <td><span class="pos-badge">1st / OF</span></td>
-          <td class="grad-year">2030</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">L / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">19</td>
-          <td class="player-name">Charlotte Stolz</td>
-          <td><span class="pos-badge">Mid Inf / OF</span></td>
-          <td class="grad-year">2029</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">21</td>
-          <td class="player-name">Addie Nichols</td>
-          <td><span class="pos-badge">3rd / SS / CF</span></td>
-          <td class="grad-year">2029</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">22</td>
-          <td class="player-name">Ariel Quattlebaum</td>
-          <td><span class="pos-badge">OF / SS / 2nd</span></td>
-          <td class="grad-year">2031</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">L / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">23</td>
-          <td class="player-name">Cayleigh Argo</td>
-          <td><span class="pos-badge">C / OF / 2nd</span></td>
-          <td class="grad-year">2030</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">41</td>
-          <td class="player-name">Aaliyah "ACE" Eldridge</td>
-          <td><span class="pos-badge">RHP / SS / UTIL</span></td>
-          <td class="grad-year">2030</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">L / R</td>
-        </tr>
-        <tr>
-          <td class="player-num">99</td>
-          <td class="player-name">Lilly Cole</td>
-          <td><span class="pos-badge">C / OF / 3rd</span></td>
-          <td class="grad-year">2030</td>
-          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-</section>
-
-<!-- SCHEDULE -->
-<section class="schedule-section" id="schedule">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label">2026 Season</p>
-      <h2 class="section-title">Tournament Schedule</h2>
-    </div>
-    <div class="schedule-grid reveal reveal-delay-1">
-
-      <div class="schedule-card">
-        <span class="status-badge badge-completed">Completed</span>
-        <div class="card-dates">Apr 5–6</div>
-        <div class="card-event">Spring Kickoff Classic</div>
-        <div class="card-location">Cabot, AR</div>
-      </div>
-
-      <div class="schedule-card">
-        <span class="status-badge badge-completed">Completed</span>
-        <div class="card-dates">Apr 19–20</div>
-        <div class="card-event">Diamond Elite Invitational</div>
-        <div class="card-location">Conway, AR</div>
-      </div>
-
-      <div class="schedule-card">
-        <span class="status-badge badge-upcoming">Upcoming</span>
-        <div class="card-dates">May 24–26</div>
-        <div class="card-event">USSSA State Championship</div>
-        <div class="card-location">Little Rock, AR</div>
-      </div>
-
-      <div class="schedule-card">
-        <span class="status-badge badge-upcoming">Upcoming</span>
-        <div class="card-dates">Jun 7–8</div>
-        <div class="card-event">Summer Slam Tournament</div>
-        <div class="card-location">Fayetteville, AR</div>
-      </div>
-
-      <div class="schedule-card">
-        <span class="status-badge badge-upcoming">Upcoming</span>
-        <div class="card-dates">Jun 21–22</div>
-        <div class="card-event">Mid-South Regional</div>
-        <div class="card-location">Memphis, TN</div>
-      </div>
-
-      <div class="schedule-card">
-        <span class="status-badge badge-upcoming">Upcoming</span>
-        <div class="card-dates">Jul 12–14</div>
-        <div class="card-event">USSSA Nationals</div>
-        <div class="card-location">TBD</div>
-      </div>
-
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- card -->
+      <a href="programs.html#performance" class="group reveal">
+        <div class="card-img relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-steel/40 mono text-[10px] uppercase tracking-widest text-center px-4">[ Photo: performance training ]</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent group-hover:from-orange/40 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 p-5">
+            <h3 class="display text-xl uppercase">Performance<br>Training</h3>
+          </div>
+        </div>
+      </a>
+      <a href="programs.html#speed" class="group reveal">
+        <div class="card-img relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-steel/40 mono text-[10px] uppercase tracking-widest text-center px-4">[ Photo: speed & agility ]</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent group-hover:from-orange/40 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 p-5">
+            <h3 class="display text-xl uppercase">Speed &<br>Agility</h3>
+          </div>
+        </div>
+      </a>
+      <a href="programs.html#strength" class="group reveal">
+        <div class="card-img relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-steel/40 mono text-[10px] uppercase tracking-widest text-center px-4">[ Photo: strength training ]</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent group-hover:from-orange/40 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 p-5">
+            <h3 class="display text-xl uppercase">Strength<br>Training</h3>
+          </div>
+        </div>
+      </a>
+      <a href="programs.html#softball" class="group reveal">
+        <div class="card-img relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-steel/40 mono text-[10px] uppercase tracking-widest text-center px-4">[ Photo: softball lessons ]</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent group-hover:from-orange/40 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 p-5">
+            <h3 class="display text-xl uppercase">Softball<br>Lessons</h3>
+          </div>
+        </div>
+      </a>
+      <a href="programs.html#baseball" class="group reveal">
+        <div class="card-img relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-steel/40 mono text-[10px] uppercase tracking-widest text-center px-4">[ Photo: baseball lessons ]</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent group-hover:from-orange/40 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 p-5">
+            <h3 class="display text-xl uppercase">Baseball<br>Lessons</h3>
+          </div>
+        </div>
+      </a>
+      <a href="programs.html#travel" class="group reveal">
+        <div class="card-img relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-steel/40 mono text-[10px] uppercase tracking-widest text-center px-4">[ Photo: travel softball ]</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent group-hover:from-orange/40 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 p-5">
+            <h3 class="display text-xl uppercase">Travel<br>Softball</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#camps" class="group reveal">
+        <div class="card-img relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-steel/40 mono text-[10px] uppercase tracking-widest text-center px-4">[ Photo: camps & clinics ]</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent group-hover:from-orange/40 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 p-5">
+            <h3 class="display text-xl uppercase">Camps &<br>Clinics</h3>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- PLAYER SPOTLIGHT -->
-<section class="players-section" id="players">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label">Player Spotlight</p>
-      <h2 class="section-title">Meet the Players</h2>
+<!-- WHY XPT -->
+<section class="bg-navy2 py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="mb-14 reveal">
+      <p class="mono text-xs uppercase tracking-[0.3em] text-orange mb-3 x-mark"><span class="px-2">Why XPT</span></p>
+      <h2 class="display text-4xl md:text-5xl uppercase text-white">The Standard Is Different Here</h2>
     </div>
-  </div>
-  <div class="container">
-    <div class="player-cards-wrap reveal reveal-delay-1">
-            <div class="player-cards">
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="1">
-            <span class="player-jersey-num">1</span>
-            <img src="images/ali-wood.webp" alt="Ali Wood">
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Ali Wood</div>
-            <div class="player-card-pos">OF</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/L</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#1</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Wynne, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="5">
-            <span class="player-jersey-num">5</span>
-            
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Mackenzie Fowler</div>
-            <div class="player-card-pos">C / 3rd / UTIL</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#5</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Marion, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="7">
-            <span class="player-jersey-num">7</span>
-            <img src="images/mel-ramsey.webp" alt="Melanie Ramsey">
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Melanie Ramsey</div>
-            <div class="player-card-pos">LHP / 1st / OF</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/L</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#7</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Baldknob, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="12">
-            <span class="player-jersey-num">12</span>
-            <img src="images/riley-barnes.webp" alt="Riley Barnes">
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Riley Barnes</div>
-            <div class="player-card-pos">OF / SS / RHP</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2029</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#12</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Tyronza, AR</span></div>
-            </div>
-            <a href="https://evo.nsr-inc.com/prospect_detail?prospect_id=215380" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="15">
-            <span class="player-jersey-num">15</span>
-            
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Addie Welch</div>
-            <div class="player-card-pos">RHP / 1st / OF</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#15</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="18">
-            <span class="player-jersey-num">18</span>
-            <img src="images/ab-wheeler.webp" alt="Anabelle Wheeler">
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Annabelle Wheeler</div>
-            <div class="player-card-pos">1st / OF</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#18</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Hoxie, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="19">
-            <span class="player-jersey-num">19</span>
-            <img src="images/char-stolz.webp" alt="Player photo">
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Charlotte Stolz</div>
-            <div class="player-card-pos">Mid Inf / OF</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2029</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#19</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="21">
-            <span class="player-jersey-num">21</span>
-            <img src="images/addie-n.webp" alt="Addie Nichols">
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Addie Nichols</div>
-            <div class="player-card-pos">3rd / SS / CF</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2029</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#21</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="22">
-            <span class="player-jersey-num">22</span>
-            
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Ariel Quattlebaum</div>
-            <div class="player-card-pos">OF / SS / 2nd</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2031</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#22</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="23">
-            <span class="player-jersey-num">23</span>
-            <img src="images/c-argo.webp" alt="Player photo">
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Cayleigh Argo</div>
-            <div class="player-card-pos">C / OF / 2nd</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#23</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="41">
-            <span class="player-jersey-num">41</span>
-            <img src="images/ace-eldridge.webp" alt="Aaliyah Eldridge">
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Aaliyah "ACE" Eldridge</div>
-            <div class="player-card-pos">RHP / SS / UTIL</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#41</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Bay, AR</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-card-photo" data-num="99">
-            <span class="player-jersey-num">99</span>
-            <img src="images/lilly-cole.webp" alt="Player photo">
-          
-          </div>
-          <div class="player-card-body">
-            <div class="player-card-name">Lilly Cole</div>
-            <div class="player-card-pos">C / OF / 3rd</div>
-            <div class="player-card-meta">
-              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
-              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
-              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#99</span></div>
-              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">TN</span></div>
-            </div>
-            <a href="#" class="player-profile-link">Player Profile</a>
-          </div>
-        </div>
-
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="reveal">
+        <div class="text-orange mb-4"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3 class="font-extrabold text-lg mb-2 text-white">Experienced Coaches</h3>
+        <p class="text-steel text-sm">Former collegiate and pro athletes who've lived the path they're coaching.</p>
       </div>
-
+      <div class="reveal">
+        <div class="text-orange mb-4"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/></svg></div>
+        <h3 class="font-extrabold text-lg mb-2 text-white">Athlete Development</h3>
+        <p class="text-steel text-sm">Progressive programming that tracks real, measurable improvement over time.</p>
+      </div>
+      <div class="reveal">
+        <div class="text-orange mb-4"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3 class="font-extrabold text-lg mb-2 text-white">Competitive Environment</h3>
+        <p class="text-steel text-sm">Athletes pushed by athletes — energy that raises the floor for everyone in the room.</p>
+      </div>
+      <div class="reveal">
+        <div class="text-orange mb-4"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.35-9.5-8.5C.5 8 3 4 7 4c2 0 4 1.5 5 3 1-1.5 3-3 5-3 4 0 6.5 4 4.5 8.5C19 16.65 12 21 12 21Z"/></svg></div>
+        <h3 class="font-extrabold text-lg mb-2 text-white">Family Culture</h3>
+        <p class="text-steel text-sm">A community of parents and athletes who show up for each other, season after season.</p>
+      </div>
+      <div class="reveal">
+        <div class="text-orange mb-4"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3 class="font-extrabold text-lg mb-2 text-white">Modern Facility</h3>
+        <p class="text-steel text-sm">Purpose-built training space with the tools to develop hitters, pitchers, and athletes.</p>
+      </div>
+      <div class="reveal">
+        <div class="text-orange mb-4"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 14l4-4 4 4 8-8"/><path d="M16 4h4v4"/></svg></div>
+        <h3 class="font-extrabold text-lg mb-2 text-white">Proven Results</h3>
+        <p class="text-steel text-sm">College commits, championship rosters, and athletes who keep coming back.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="container reveal">
-    <p class="section-label">Get in Touch</p>
-    <h2 class="section-title">Connect With<br>the Team</h2>
-    <p class="contact-sub">Interested in tryouts, recruiting info, or sponsorship opportunities? Reach out to our coaching staff directly.</p>
-    <div class="contact-links">
-      <a href="mailto:coach@arkansasnemesisgold.com" class="contact-link">✉ Email Coach</a>
-      <a href="#" class="contact-link">Facebook</a>
-      <a href="#" class="contact-link">Instagram</a>
+<!-- COACH BIOS -->
+<section id="coaches" class="bg-navy py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="mb-12 reveal">
+      <p class="mono text-xs uppercase tracking-[0.3em] text-orange mb-3 x-mark"><span class="px-2">Private Lessons</span></p>
+      <h2 class="display text-4xl md:text-5xl uppercase">Who You'll Train With</h2>
+      <p class="text-steel mt-3 max-w-lg text-sm">Every lesson at XPT is one-on-one or small group with a coach who has played and competed at a high level — not just someone who watched the game.</p>
+    </div>
+
+    <div class="space-y-6">
+
+      <!-- Coach 1 -->
+      <div class="reveal bg-navy2 p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
+        <div class="shrink-0 w-full sm:w-28 md:w-36 aspect-square bg-charcoal flex items-center justify-center mono text-[9px] uppercase tracking-widest text-steel/40 text-center">
+          [ Photo ]
+        </div>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-1">
+            <h3 class="display text-2xl uppercase">Coach Name</h3>
+            <span class="mono text-[11px] uppercase tracking-[0.12em] text-orange">Hitting · Speed</span>
+          </div>
+          <p class="text-steel text-sm leading-relaxed mb-4">Former NCAA Division I shortstop with four years of collegiate experience. Specializes in fastpitch hitting mechanics, bat path, and sprint development for youth athletes. Has worked with athletes who've gone on to play at the collegiate level and beyond. Known for breaking down complex mechanics into things athletes can actually feel and repeat.</p>
+          <a href="#book" class="inline-block bg-orange text-white mono text-[11px] uppercase tracking-[0.15em] px-5 py-2.5 font-bold hover:bg-white hover:text-navy transition-colors">Book a Lesson</a>
+        </div>
+      </div>
+
+      <!-- Coach 2 -->
+      <div class="reveal bg-navy2 p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
+        <div class="shrink-0 w-full sm:w-28 md:w-36 aspect-square bg-charcoal flex items-center justify-center mono text-[9px] uppercase tracking-widest text-steel/40 text-center">
+          [ Photo ]
+        </div>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-1">
+            <h3 class="display text-2xl uppercase">Coach Name</h3>
+            <span class="mono text-[11px] uppercase tracking-[0.12em] text-orange">Pitching</span>
+          </div>
+          <p class="text-steel text-sm leading-relaxed mb-4">Played pitcher at the Division I level and spent two years in independent professional ball. Brings a deep understanding of spin mechanics, sequencing, and velocity development — paired with a coaching style that builds confidence alongside command. Works with pitchers ages 8 through high school and has developed multiple athletes who've earned college scholarships.</p>
+          <a href="#book" class="inline-block bg-orange text-white mono text-[11px] uppercase tracking-[0.15em] px-5 py-2.5 font-bold hover:bg-white hover:text-navy transition-colors">Book a Lesson</a>
+        </div>
+      </div>
+
+      <!-- Coach 3 -->
+      <div class="reveal bg-navy2 p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
+        <div class="shrink-0 w-full sm:w-28 md:w-36 aspect-square bg-charcoal flex items-center justify-center mono text-[9px] uppercase tracking-widest text-steel/40 text-center">
+          [ Photo ]
+        </div>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-1">
+            <h3 class="display text-2xl uppercase">Coach Name</h3>
+            <span class="mono text-[11px] uppercase tracking-[0.12em] text-orange">Strength · Performance</span>
+          </div>
+          <p class="text-steel text-sm leading-relaxed mb-4">Certified strength and conditioning specialist with a background in collegiate football and sports performance. Designs all XPT performance programs with youth athletes in mind — building real strength and explosive power without compromising long-term development. Parents consistently note visible changes in how their athlete moves and competes within a few weeks of training.</p>
+          <a href="#book" class="inline-block bg-orange text-white mono text-[11px] uppercase tracking-[0.15em] px-5 py-2.5 font-bold hover:bg-white hover:text-navy transition-colors">Book a Lesson</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- MERCH -->
-<section class="merch-section" id="merch">
-  <div class="container reveal">
-    <p class="section-label">Team Store</p>
-    <h2 class="section-title">Nemesis Gold<br>Merchandise</h2>
-    <p class="merch-sub">Rep the Nemesis. Official team gear available now — apparel, accessories, and more.</p>
-    <a href="https://nemesis.merch-stores.com/" target="_blank" class="btn btn-white" style="border: 2px solid var(--royal); color: var(--royal);">Shop Team Store</a>
+<!-- ATHLETE SUCCESS -->
+<section id="testimonials" class="bg-navy2 py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="mb-14 reveal">
+      <p class="mono text-xs uppercase tracking-[0.3em] text-orange mb-3 x-mark"><span class="px-2">Results</span></p>
+      <h2 class="display text-4xl md:text-5xl uppercase">Athlete Success</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-navy p-7 reveal">
+        <p class="text-steel text-sm mb-6">"My daughter's exit velocity jumped 9 mph in one off-season. The coaches track everything — it's not guesswork."</p>
+        <p class="font-bold text-sm">Parent of 14U Athlete</p>
+        <p class="mono text-[10px] uppercase tracking-[0.1em] text-orange">Travel Softball Family</p>
+      </div>
+      <div class="bg-navy p-7 reveal">
+        <p class="text-steel text-sm mb-6">"XPT is where she committed to the work that got her recruited. That environment doesn't exist everywhere."</p>
+        <p class="font-bold text-sm">D1 College Commit</p>
+        <p class="mono text-[10px] uppercase tracking-[0.1em] text-orange">Class of 2026</p>
+      </div>
+      <div class="bg-navy p-7 reveal">
+        <p class="text-steel text-sm mb-6">"60-yard time dropped almost half a second in eight weeks. He looks like a different athlete out there."</p>
+        <p class="font-bold text-sm">Parent of 16U Athlete</p>
+        <p class="mono text-[10px] uppercase tracking-[0.1em] text-orange">Speed & Agility Program</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">
-    Arkansas Nemesis Gold
-    <span>Fastpitch Softball · Arkansas</span>
+
+
+<!-- INSTAGRAM -->
+<section class="bg-navy py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="mb-10 reveal flex items-center justify-between flex-wrap gap-4">
+      <h2 class="display text-3xl uppercase">@XPT on Instagram</h2>
+      <a href="#" class="mono text-xs uppercase tracking-[0.15em] border-b border-orange pb-1 hover:text-orange">Follow Along →</a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-3 reveal">
+      <div class="card-img" style="aspect-ratio:1/1"></div>
+      <div class="card-img" style="aspect-ratio:1/1"></div>
+      <div class="card-img" style="aspect-ratio:1/1"></div>
+      <div class="card-img" style="aspect-ratio:1/1"></div>
+      <div class="card-img" style="aspect-ratio:1/1"></div>
+      <div class="card-img" style="aspect-ratio:1/1"></div>
+    </div>
+    <p class="mono text-[10px] uppercase tracking-widest text-steel/50 mt-3">[ Live Instagram embed goes here ]</p>
   </div>
-  <div class="footer-copy">© 2026 Arkansas Nemesis Gold. All rights reserved.</div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="book" class="relative bg-orange py-32 overflow-hidden">
+  <div class="absolute inset-0 placeholder-tex opacity-30"></div>
+  <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
+    <h2 class="display text-4xl md:text-6xl uppercase leading-tight mb-8">Ready to Take Your Game<br>to the Next Level?</h2>
+    <a href="#" class="inline-block bg-navy text-white px-10 py-5 font-bold uppercase mono text-sm tracking-[0.15em] hover:bg-white hover:text-navy transition-colors">Book Your Training</a>
+    <p class="mono text-[11px] uppercase tracking-[0.15em] mt-5 opacity-70">Opens our booking platform in a new tab</p>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact" class="bg-navy2 pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
+    <div>
+      <span class="display text-2xl">XPT</span>
+      <p class="mono text-[10px] uppercase tracking-[0.2em] text-steel mt-2">Xtreme Performance Training</p>
+      <p class="text-steel text-sm mt-5">123 Performance Way<br>Jonesboro, AR 72401</p>
+      <p class="text-steel text-sm mt-3">(870) 000-0000<br>info@xptathletics.com</p>
+    </div>
+    <div>
+      <h4 class="mono text-xs uppercase tracking-[0.15em] text-orange mb-4">Training</h4>
+      <ul class="space-y-2 text-steel text-sm">
+        <li><a href="programs.html#performance" class="hover:text-white">Performance Training</a></li>
+        <li><a href="programs.html#speed" class="hover:text-white">Speed & Agility</a></li>
+        <li><a href="programs.html#strength" class="hover:text-white">Strength Training</a></li>
+        <li><a href="programs.html#softball" class="hover:text-white">Softball Lessons</a></li>
+        <li><a href="programs.html#baseball" class="hover:text-white">Baseball Lessons</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mono text-xs uppercase tracking-[0.15em] text-orange mb-4">Organization</h4>
+      <ul class="space-y-2 text-steel text-sm">
+        <li><a href="coaches.html" class="hover:text-white">Coaches</a></li>
+        <li><a href="#teams" class="hover:text-white">Travel Softball Teams</a></li>
+        <li><a href="#camps" class="hover:text-white">Camps & Clinics</a></li>
+        <li><a href="#testimonials" class="hover:text-white">Testimonials</a></li>
+        <li><a href="#" class="hover:text-white">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mono text-xs uppercase tracking-[0.15em] text-orange mb-4">Visit Us</h4>
+      <div class="bg-navy h-32 flex items-center justify-center text-steel/40 mono text-[10px] uppercase tracking-widest">[ Google Map embed ]</div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-steel text-xs mono uppercase tracking-[0.1em]">
+    <p>© 2026 XPT — Xtreme Performance Training. Jonesboro, AR.</p>
+    <p>Softball Training Jonesboro AR · Baseball Lessons Jonesboro · Speed Training Arkansas</p>
+  </div>
 </footer>
 
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
-
-  // Smooth scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
+  // Nav background on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.classList.add('bg-navy/95','backdrop-blur-md','shadow-lg');
+    } else {
+      nav.classList.remove('bg-navy/95','backdrop-blur-md','shadow-lg');
+    }
   });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const menuClose = document.getElementById('menuClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+  menuClose.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+
+  // Scroll reveals
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => io.observe(el));
 </script>
 </body>
 </html>
