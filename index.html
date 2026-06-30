@@ -1,1 +1,1296 @@
+w<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arkansas Nemesis Gold | Elite Fastpitch Softball</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  :root {
+    --royal: #121C7A;
+    --royal-dark: #0C1560;
+    --royal-mid: #1a2894;
+    --white: #FFFFFF;
+    --off-white: #F5F5F5;
+    --gold: #C9A84C;
+    --gold-light: #E4C068;
+    --gold-dark: #A8843A;
+    --silver: #C7C7C7;
+    --mid-gray: #888;
+    --text-dark: #111;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(18, 28, 122, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .nav-brand span { color: var(--gold); font-weight: 400; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--royal);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 60px;
+  }
+
+  /* Softball stitching background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+  }
+
+  .hero-stitching {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0.06;
+  }
+
+  .hero-stitching svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-logo {
+    width: 340px;
+    height: auto;
+    margin: 0 auto 2.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 24px rgba(0,0,0,0.4));
+  }
+
+  /* SVG logo placeholder — replace src with actual logo */
+  .logo-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2.5rem;
+    position: relative;
+  }
+
+  .logo-circle::after {
+    content: 'N';
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    animation: fadeUp 0.85s ease both;
+    animation-delay: 0.05s;
+  }
+
+  .hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    animation: fadeUp 0.9s ease both;
+    animation-delay: 0.1s;
+  }
+
+  .hero-title .gold-line {
+    display: block;
+    color: var(--gold);
+    font-size: 0.45em;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  .hero-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.9s ease both;
+    animation-delay: 0.15s;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.9s ease both;
+    animation-delay: 0.22s;
+  }
+
+  .btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.85rem 2.2rem;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-white {
+    background: var(--white);
+    color: var(--royal);
+    border: 2px solid var(--white);
+  }
+
+  .btn-white:hover {
+    background: transparent;
+    color: var(--white);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--white);
+    background: rgba(255,255,255,0.08);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.3);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: fadeUp 1s ease both 0.5s;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    animation: scrollDrop 1.8s ease-in-out infinite;
+  }
+
+  @keyframes scrollDrop {
+    0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+    50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 6rem 1.5rem; }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--royal);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--white);
+  }
+
+  .about-inner {
+    max-width: 680px;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #444;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5px;
+    background: var(--gold);
+    border: 1.5px solid var(--gold);
+  }
+
+  .stat-box {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--royal);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  /* ── ROSTER ── */
+  .roster-section {
+    background: var(--royal);
+  }
+
+  .roster-section .section-label { color: var(--gold); }
+  .roster-section .section-title { color: var(--white); }
+
+  .roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2.5rem;
+  }
+
+  .roster-table th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    font-weight: 600;
+  }
+
+  .roster-table td {
+    padding: 1rem;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    vertical-align: middle;
+  }
+
+  .roster-table tr:hover td {
+    background: rgba(255,255,255,0.04);
+  }
+
+  .player-num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1.1rem;
+  }
+
+  .player-name {
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .pos-badge {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(201,168,76,0.15);
+    color: var(--gold);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  .grad-year {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SCHEDULE ── */
+  .schedule-section {
+    background: var(--off-white);
+  }
+
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    margin-top: 2.5rem;
+  }
+
+  .schedule-card {
+    background: var(--white);
+    padding: 1.75rem;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .schedule-card:hover { background: #f9f9f9; }
+
+  .schedule-card .card-dates {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--royal);
+    margin-bottom: 0.3rem;
+  }
+
+  .schedule-card .card-event {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .schedule-card .card-location {
+    font-size: 0.85rem;
+    color: var(--mid-gray);
+    font-weight: 300;
+  }
+
+  .status-badge {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    position: absolute;
+    top: 1.75rem;
+    right: 1.75rem;
+  }
+
+  .badge-upcoming { background: var(--gold); color: var(--royal-dark); }
+  .badge-completed { background: #e5e5e5; color: #666; }
+
+  /* ── PLAYERS SECTION ── */
+  .players-section {
+    background: var(--white);
+  }
+
+  .player-cards-wrap {
+    margin-top: 2.5rem;
+  }
+
+  .player-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .player-card {
+    width: 100%;
+    flex-shrink: 0;
+    border: 1.5px solid #e8e8e8;
+    background: var(--white);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .player-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .player-card-photo {
+    background: var(--royal);
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+  }
+
+  .player-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+  }
+
+  .player-jersey-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(201,168,76,0.65);
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    line-height: 1;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .player-initial {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    z-index: 1;
+    position: relative;
+  }
+
+  .player-card-body {
+    padding: 0.85rem;
+  }
+
+  .player-card-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+
+  .player-card-pos {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .player-profile-link {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--royal);
+    border: 1.5px solid var(--gold);
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .player-profile-link:hover {
+    background: var(--gold);
+    color: var(--royal-dark);
+  }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .meta-item { font-size: 0.72rem; }
+  .meta-item .meta-label {
+    color: var(--mid-gray);
+    font-size: 0.65rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+  }
+  .meta-item .meta-val { font-weight: 600; color: var(--text-dark); }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--royal);
+    text-align: center;
+  }
+
+  .contact-section .section-label { color: var(--gold); }
+  .contact-section .section-title { color: var(--white); }
+
+  .contact-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    padding: 0.75rem 1.8rem;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* ── MERCH ── */
+  .merch-section {
+    background: var(--off-white);
+    text-align: center;
+    padding: 4rem 1.5rem;
+    border-top: 4px solid var(--gold);
+  }
+
+  .merch-section .section-label { color: var(--royal); }
+  .merch-section .section-title { color: var(--text-dark); }
+
+  .merch-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #555;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--royal-dark);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .footer-brand span { color: var(--gold); font-weight: 400; font-size: 0.75rem; display: block; margin-top: 0.2rem; letter-spacing: 0.15em; }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── DIVIDER STRIPE ── */
+  .stripe {
+    height: 4px;
+    background: linear-gradient(90deg, var(--royal) 0%, var(--gold) 50%, var(--royal) 100%);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    section { padding: 4rem 1.25rem; }
+    .hero-title { font-size: clamp(2.4rem, 11vw, 4rem); }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 220px; text-align: center; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Arkansas Nemesis <span>Gold</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#roster">Roster</a></li>
+    <li><a href="#players">Players</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="https://nemesis.merch-stores.com/" target="_blank">Team Store</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-stitching">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <!-- Softball stitching arcs -->
+      <g fill="none" stroke="white" stroke-width="1.5">
+        <path d="M 200,400 Q 250,250 300,400 Q 250,550 200,400"/>
+        <path d="M 220,380 Q 270,230 320,380 Q 270,530 220,380"/>
+        <path d="M 900,200 Q 950,50 1000,200 Q 950,350 900,200"/>
+        <path d="M 920,180 Q 970,30 1020,180 Q 970,330 920,180"/>
+        <path d="M 600,600 Q 650,450 700,600 Q 650,750 600,600"/>
+        <path d="M 620,580 Q 670,430 720,580 Q 670,730 620,580"/>
+        <line x1="240" y1="360" x2="260" y2="350"/>
+        <line x1="245" y1="375" x2="265" y2="370"/>
+        <line x1="245" y1="390" x2="265" y2="390"/>
+        <line x1="245" y1="405" x2="265" y2="408"/>
+        <line x1="240" y1="420" x2="260" y2="428"/>
+        <line x1="940" y1="160" x2="960" y2="150"/>
+        <line x1="945" y1="175" x2="965" y2="170"/>
+        <line x1="945" y1="190" x2="965" y2="190"/>
+        <line x1="945" y1="205" x2="965" y2="208"/>
+        <line x1="940" y1="220" x2="960" y2="228"/>
+        <line x1="640" y1="560" x2="660" y2="550"/>
+        <line x1="645" y1="575" x2="665" y2="570"/>
+        <line x1="645" y1="590" x2="665" y2="590"/>
+        <line x1="645" y1="605" x2="665" y2="608"/>
+        <line x1="640" y1="620" x2="660" y2="628"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <img src="images/arnemesis-gold-logo.webp" class="hero-logo" alt="Arkansas Nemesis Gold">
+    <p class="hero-eyebrow">Arkansas · Fastpitch · Organization</p>
+    <h1 class="hero-title">
+      Arkansas<br>Nemesis
+      <span class="gold-line">Gold</span>
+    </h1>
+    <p class="hero-sub">Elite Fastpitch Softball</p>
+    <div class="hero-buttons">
+      <a href="#schedule" class="btn btn-white">View Schedule</a>
+      <a href="#contact" class="btn btn-outline">Contact Team</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-text reveal">
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title">Built for<br>the Next Level</h2>
+        <p>Arkansas Nemesis Gold is a competitive fastpitch softball organization focused on player development, toughness, and exposure at the next level. We compete in elite travel ball circuits across the region and beyond.</p>
+        <p>Based in Arkansas, our program is built around a culture of accountability, hard work, and genuine love for the game.</p>
+        <a href="#contact" class="btn btn-white" style="border: 2px solid var(--royal); color: var(--royal); margin-top: 0.5rem;">Connect With Us</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ROSTER -->
+<section class="roster-section" id="roster">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">The Team</p>
+      <h2 class="section-title">2026 Roster</h2>
+    </div>
+    <table class="roster-table reveal reveal-delay-1">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>Position</th>
+          <th>Grad Year</th>
+          <th>Bats / Throws</th>
+        </tr>
+      </thead>
+            <tbody>
+        <tr>
+          <td class="player-num">1</td>
+          <td class="player-name">Ali Wood</td>
+          <td><span class="pos-badge">OF</span></td>
+          <td class="grad-year">2030</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">L / L</td>
+        </tr>
+        <tr>
+          <td class="player-num">5</td>
+          <td class="player-name">Mackenzie Fowler</td>
+          <td><span class="pos-badge">C / 3rd / UTIL</span></td>
+          <td class="grad-year">2030</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">7</td>
+          <td class="player-name">Melanie Ramsey</td>
+          <td><span class="pos-badge">LHP / 1st / OF</span></td>
+          <td class="grad-year">2030</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">L / L</td>
+        </tr>
+        <tr>
+          <td class="player-num">12</td>
+          <td class="player-name">Riley Barnes</td>
+          <td><span class="pos-badge">OF / SS / RHP</span></td>
+          <td class="grad-year">2029</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">15</td>
+          <td class="player-name">Addie Welch</td>
+          <td><span class="pos-badge">RHP / 1st / OF</span></td>
+          <td class="grad-year">2030</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">18</td>
+          <td class="player-name">Annabelle Wheeler</td>
+          <td><span class="pos-badge">1st / OF</span></td>
+          <td class="grad-year">2030</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">L / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">19</td>
+          <td class="player-name">Charlotte Stolz</td>
+          <td><span class="pos-badge">Mid Inf / OF</span></td>
+          <td class="grad-year">2029</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">21</td>
+          <td class="player-name">Addie Nichols</td>
+          <td><span class="pos-badge">3rd / SS / CF</span></td>
+          <td class="grad-year">2029</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">22</td>
+          <td class="player-name">Ariel Quattlebaum</td>
+          <td><span class="pos-badge">OF / SS / 2nd</span></td>
+          <td class="grad-year">2031</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">L / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">23</td>
+          <td class="player-name">Cayleigh Argo</td>
+          <td><span class="pos-badge">C / OF / 2nd</span></td>
+          <td class="grad-year">2030</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">41</td>
+          <td class="player-name">Aaliyah "ACE" Eldridge</td>
+          <td><span class="pos-badge">RHP / SS / UTIL</span></td>
+          <td class="grad-year">2030</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">L / R</td>
+        </tr>
+        <tr>
+          <td class="player-num">99</td>
+          <td class="player-name">Lilly Cole</td>
+          <td><span class="pos-badge">C / OF / 3rd</span></td>
+          <td class="grad-year">2030</td>
+          <td style="color:var(--gold-light); font-size:0.9rem;">R / R</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">2026 Season</p>
+      <h2 class="section-title">Tournament Schedule</h2>
+    </div>
+    <div class="schedule-grid reveal reveal-delay-1">
+
+      <div class="schedule-card">
+        <span class="status-badge badge-completed">Completed</span>
+        <div class="card-dates">Apr 5–6</div>
+        <div class="card-event">Spring Kickoff Classic</div>
+        <div class="card-location">Cabot, AR</div>
+      </div>
+
+      <div class="schedule-card">
+        <span class="status-badge badge-completed">Completed</span>
+        <div class="card-dates">Apr 19–20</div>
+        <div class="card-event">Diamond Elite Invitational</div>
+        <div class="card-location">Conway, AR</div>
+      </div>
+
+      <div class="schedule-card">
+        <span class="status-badge badge-upcoming">Upcoming</span>
+        <div class="card-dates">May 24–26</div>
+        <div class="card-event">USSSA State Championship</div>
+        <div class="card-location">Little Rock, AR</div>
+      </div>
+
+      <div class="schedule-card">
+        <span class="status-badge badge-upcoming">Upcoming</span>
+        <div class="card-dates">Jun 7–8</div>
+        <div class="card-event">Summer Slam Tournament</div>
+        <div class="card-location">Fayetteville, AR</div>
+      </div>
+
+      <div class="schedule-card">
+        <span class="status-badge badge-upcoming">Upcoming</span>
+        <div class="card-dates">Jun 21–22</div>
+        <div class="card-event">Mid-South Regional</div>
+        <div class="card-location">Memphis, TN</div>
+      </div>
+
+      <div class="schedule-card">
+        <span class="status-badge badge-upcoming">Upcoming</span>
+        <div class="card-dates">Jul 12–14</div>
+        <div class="card-event">USSSA Nationals</div>
+        <div class="card-location">TBD</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLAYER SPOTLIGHT -->
+<section class="players-section" id="players">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Player Spotlight</p>
+      <h2 class="section-title">Meet the Players</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="player-cards-wrap reveal reveal-delay-1">
+            <div class="player-cards">
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="1">
+            <span class="player-jersey-num">1</span>
+            <img src="images/ali-wood.webp" alt="Ali Wood">
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Ali Wood</div>
+            <div class="player-card-pos">OF</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/L</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#1</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Wynne, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="5">
+            <span class="player-jersey-num">5</span>
+            
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Mackenzie Fowler</div>
+            <div class="player-card-pos">C / 3rd / UTIL</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#5</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Marion, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="7">
+            <span class="player-jersey-num">7</span>
+            <img src="images/mel-ramsey.webp" alt="Melanie Ramsey">
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Melanie Ramsey</div>
+            <div class="player-card-pos">LHP / 1st / OF</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/L</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#7</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Baldknob, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="12">
+            <span class="player-jersey-num">12</span>
+            <img src="images/riley-barnes.webp" alt="Riley Barnes">
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Riley Barnes</div>
+            <div class="player-card-pos">OF / SS / RHP</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2029</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#12</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Tyronza, AR</span></div>
+            </div>
+            <a href="https://evo.nsr-inc.com/prospect_detail?prospect_id=215380" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="15">
+            <span class="player-jersey-num">15</span>
+            
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Addie Welch</div>
+            <div class="player-card-pos">RHP / 1st / OF</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#15</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="18">
+            <span class="player-jersey-num">18</span>
+            <img src="images/ab-wheeler.webp" alt="Anabelle Wheeler">
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Annabelle Wheeler</div>
+            <div class="player-card-pos">1st / OF</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#18</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Hoxie, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="19">
+            <span class="player-jersey-num">19</span>
+            <img src="images/char-stolz.webp" alt="Player photo">
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Charlotte Stolz</div>
+            <div class="player-card-pos">Mid Inf / OF</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2029</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#19</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="21">
+            <span class="player-jersey-num">21</span>
+            <img src="images/addie-n.webp" alt="Addie Nichols">
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Addie Nichols</div>
+            <div class="player-card-pos">3rd / SS / CF</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2029</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#21</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="22">
+            <span class="player-jersey-num">22</span>
+            
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Ariel Quattlebaum</div>
+            <div class="player-card-pos">OF / SS / 2nd</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2031</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#22</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="23">
+            <span class="player-jersey-num">23</span>
+            <img src="images/c-argo.webp" alt="Player photo">
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Cayleigh Argo</div>
+            <div class="player-card-pos">C / OF / 2nd</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#23</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Jonesboro, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="41">
+            <span class="player-jersey-num">41</span>
+            <img src="images/ace-eldridge.webp" alt="Aaliyah Eldridge">
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Aaliyah "ACE" Eldridge</div>
+            <div class="player-card-pos">RHP / SS / UTIL</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">L/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#41</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">Bay, AR</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-card-photo" data-num="99">
+            <span class="player-jersey-num">99</span>
+            <img src="images/lilly-cole.webp" alt="Player photo">
+          
+          </div>
+          <div class="player-card-body">
+            <div class="player-card-name">Lilly Cole</div>
+            <div class="player-card-pos">C / OF / 3rd</div>
+            <div class="player-card-meta">
+              <div class="meta-item"><span class="meta-label">Grad</span><span class="meta-val">2030</span></div>
+              <div class="meta-item"><span class="meta-label">B/T</span><span class="meta-val">R/R</span></div>
+              <div class="meta-item"><span class="meta-label">Jersey</span><span class="meta-val">#99</span></div>
+              <div class="meta-item"><span class="meta-label">Hometown</span><span class="meta-val">TN</span></div>
+            </div>
+            <a href="#" class="player-profile-link">Player Profile</a>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container reveal">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Connect With<br>the Team</h2>
+    <p class="contact-sub">Interested in tryouts, recruiting info, or sponsorship opportunities? Reach out to our coaching staff directly.</p>
+    <div class="contact-links">
+      <a href="mailto:coach@arkansasnemesisgold.com" class="contact-link">✉ Email Coach</a>
+      <a href="#" class="contact-link">Facebook</a>
+      <a href="#" class="contact-link">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- MERCH -->
+<section class="merch-section" id="merch">
+  <div class="container reveal">
+    <p class="section-label">Team Store</p>
+    <h2 class="section-title">Nemesis Gold<br>Merchandise</h2>
+    <p class="merch-sub">Rep the Nemesis. Official team gear available now — apparel, accessories, and more.</p>
+    <a href="https://nemesis.merch-stores.com/" target="_blank" class="btn btn-white" style="border: 2px solid var(--royal); color: var(--royal);">Shop Team Store</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    Arkansas Nemesis Gold
+    <span>Fastpitch Softball · Arkansas</span>
+  </div>
+  <div class="footer-copy">© 2026 Arkansas Nemesis Gold. All rights reserved.</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
