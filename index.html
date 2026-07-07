@@ -150,9 +150,13 @@
 
   <!-- Background image with Ken Burns -->
   <div class="absolute inset-0 overflow-hidden">
-    <img src="images/xpt-logo-big-rem.png" alt="" aria-hidden="true"
-         class="hero-bg-img w-full h-full object-cover object-center"
-         style="filter: grayscale(100%) brightness(0.25) contrast(1.15);">
+    <div class="hero-bg-img w-full h-full"
+         style="background-image: url('images/xpt-logo-big-rem.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                filter: grayscale(100%) brightness(0.25) contrast(1.15);">
+    </div>
   </div>
 
   <!-- Cinematic grade -->
