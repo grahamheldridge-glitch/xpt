@@ -146,7 +146,7 @@
 </header>
 
 <!-- HERO -->
-<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-navy">
+<section class="relative min-h-screen flex flex-col items-center justify-center bg-navy">
 
   <!-- Background image with Ken Burns -->
   <div class="absolute inset-0 overflow-hidden">
@@ -165,26 +165,25 @@
   <div class="absolute inset-0 z-10" style="background:radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(15,29,51,0.7) 100%);"></div>
 
   <!-- Content -->
-  <div class="relative z-20 flex flex-col items-center text-center px-6 pt-24 pb-32 w-full">
+  <div class="relative z-20 flex flex-col items-center text-center px-6 pt-20 pb-16 w-full">
     <img src="images/xpt-logo-big-rem.png" alt="XPT — Xtreme Performance Training"
-         class="logo-fade w-36 md:w-52 mb-8 rounded-sm"
+         class="logo-fade w-28 md:w-52 mb-5 md:mb-8"
          style="filter: drop-shadow(0 0 36px rgba(243,90,31,0.55)) drop-shadow(0 4px 20px rgba(0,0,0,0.9));">
 
-    <h1 class="hero-headline display text-[13vw] md:text-[6vw] leading-[0.92] uppercase">
+    <h1 class="hero-headline display text-[11vw] md:text-[6vw] leading-[0.92] uppercase">
       <span>Xtreme Performance</span>
       <span class="text-orange">Training.</span>
     </h1>
 
-    <p class="hero-sub mt-5 max-w-sm text-steel text-sm md:text-base leading-relaxed">
+    <p class="hero-sub mt-4 max-w-sm text-steel text-sm md:text-base leading-relaxed">
       Youth athletic training, softball & baseball lessons, camps and clinics — Jonesboro, AR.
     </p>
-
   </div>
 
   <!-- Scroll cue -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
     <span class="mono text-[10px] uppercase tracking-[0.3em] text-white/30">Scroll</span>
-    <span class="block w-px h-10 bg-white/20 relative overflow-hidden"><span class="scroll-fill"></span></span>
+    <span class="block w-px h-8 bg-white/20 relative overflow-hidden"><span class="scroll-fill"></span></span>
   </div>
 </section>
 
@@ -204,44 +203,28 @@
       <div id="carouselTrack" class="flex transition-transform duration-500 ease-in-out">
 
         <!-- Slide 1 -->
-        <div class="carousel-slide shrink-0 w-full relative" style="aspect-ratio:4/3; min-height:280px;">
-          <img src="images/jm-camp.jpeg" alt="JM Camp" class="absolute inset-0 w-full h-full object-cover">
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy via-navy/60 to-transparent p-6 md:p-10">
-            <h3 class="display text-2xl md:text-4xl uppercase">Event Title</h3>
-            <p class="text-steel text-sm mt-1">Short description of what's going on here.</p>
-          </div>
+        <div class="carousel-slide shrink-0 w-full relative bg-navy" style="min-height:420px; height:60vw; max-height:680px;">
+          <img src="images/jm-camp.jpeg" alt="JM Camp" class="absolute inset-0 w-full h-full object-contain">
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-slide shrink-0 w-full relative" style="aspect-ratio:4/3; min-height:280px;">
-          <div class="absolute inset-0 bg-navy2 flex items-center justify-center mono text-[10px] uppercase tracking-widest text-steel/40">
-            [ Image 2 — swap src below ]
-          </div>
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy via-navy/60 to-transparent p-6 md:p-10">
-            <h3 class="display text-2xl md:text-4xl uppercase">Event Title</h3>
-            <p class="text-steel text-sm mt-1">Short description of what's going on here.</p>
+        <div class="carousel-slide shrink-0 w-full relative bg-navy2" style="min-height:420px; height:60vw; max-height:680px;">
+          <div class="absolute inset-0 flex items-center justify-center mono text-[10px] uppercase tracking-widest text-steel/40">
+            [ Image 2 ]
           </div>
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-slide shrink-0 w-full relative" style="aspect-ratio:4/3; min-height:280px;">
-          <div class="absolute inset-0 bg-navy2 flex items-center justify-center mono text-[10px] uppercase tracking-widest text-steel/40">
-            [ Image 3 — swap src below ]
-          </div>
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy via-navy/60 to-transparent p-6 md:p-10">
-            <h3 class="display text-2xl md:text-4xl uppercase">Event Title</h3>
-            <p class="text-steel text-sm mt-1">Short description of what's going on here.</p>
+        <div class="carousel-slide shrink-0 w-full relative bg-navy2" style="min-height:420px; height:60vw; max-height:680px;">
+          <div class="absolute inset-0 flex items-center justify-center mono text-[10px] uppercase tracking-widest text-steel/40">
+            [ Image 3 ]
           </div>
         </div>
 
         <!-- Slide 4 -->
-        <div class="carousel-slide shrink-0 w-full relative" style="aspect-ratio:4/3; min-height:280px;">
-          <div class="absolute inset-0 bg-navy2 flex items-center justify-center mono text-[10px] uppercase tracking-widest text-steel/40">
-            [ Image 4 — swap src below ]
-          </div>
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy via-navy/60 to-transparent p-6 md:p-10">
-            <h3 class="display text-2xl md:text-4xl uppercase">Event Title</h3>
-            <p class="text-steel text-sm mt-1">Short description of what's going on here.</p>
+        <div class="carousel-slide shrink-0 w-full relative bg-navy2" style="min-height:420px; height:60vw; max-height:680px;">
+          <div class="absolute inset-0 flex items-center justify-center mono text-[10px] uppercase tracking-widest text-steel/40">
+            [ Image 4 ]
           </div>
         </div>
 
